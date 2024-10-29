@@ -1,0 +1,81 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Clasificador de radiografias de torax para la deteccion de enfermedades\\
+
+
+}
+
+\author{\IEEEauthorblockN{Juan David Mateus}
+\IEEEauthorblockA{\textit{Facultad de Ingenieria} \\
+\textit{Universidad Coopertaiva de Colombia}\\
+Villavicencio, Colombia \\
+juan.mateuss@campusucc.edu.co}
+\and
+\IEEEauthorblockN{Jhonnatan Mendez}
+\IEEEauthorblockA{\textit{Facultad de ingenieria} \\
+\textit{Universidad Coopertaiva de Colombia}\\
+Villavicencio, Colombia \\
+jhonnatan.mendez@campusucc.edu.co}
+}
+
+\maketitle
+
+\begin{abstract}
+Early and accurate detection of lung diseases is a critical challenge in modern medicine. Chest X-rays are a key tool for clinical diagnoses, as they allow for the visualization of abnormalities in the lungs and heart. However, the manual analysis of these images by radiologists can be slow, costly, and prone to human error, especially when reviewing large volumes of X-rays in a high-demand hospital setting.\\
+
+Artificial intelligence (AI) has proven to be a promising technology in the medical field, with applications in image analysis that offer greater speed and accuracy in diagnosis. This approach aims to improve the performance of medical diagnosis and facilitate timely and appropriate treatment for patients.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Early detection, Lung diseases, Chest X-rays, Artificial intelligence (AI)
+\end{IEEEkeywords}
+
+\section{Introduction}
+La detección temprana y precisa de enfermedades pulmonares es un desafío crítico en la medicina moderna. Las radiografías de tórax son una herramienta clave para los diagnósticos clínicos, ya que permiten visualizar anormalidades en los pulmones y el corazón. Sin embargo, el análisis manual de estas imágenes por parte de radiólogos puede ser lento, costoso y propenso a errores humanos, especialmente cuando se revisan grandes volúmenes de radiografías en un entorno hospitalario con alta demanda.\\
+
+La inteligencia artificial (IA) ha demostrado ser una tecnología prometedora en el campo de la medicina, con aplicaciones en el análisis de imágenes que ofrecen mayor rapidez y precisión en el diagnóstico. Mediante este enfoque, se pretende mejorar el rendimiento del diagnóstico médico y facilitar un tratamiento oportuno y adecuado para los pacientes.
+\section{Planteamiento del problema}
+\subsection{Descripcion del problema}
+La detección de enfermedades a través de radiografías de tórax es un proceso fundamental en el diagnóstico médico. Sin embargo, los métodos convencionales de análisis radiológico manual presentan limitaciones, como la dependencia de la habilidad y experiencia del especialista, la posibilidad de errores humanos y la falta de herramientas tecnológicas avanzadas para la identificación rápida y precisa de condiciones médicas.\\
+
+El problema se centra en la necesidad de un sistema automatizado capaz de clasificar radiografías de tórax y detectar diversas enfermedades pulmonares, tales como neumonía, tuberculosis, fibrosis pulmonar, entre otras. La falta de sistemas inteligentes que asistan a los radiólogos en el diagnóstico puede llevar a diagnósticos incorrectos o a la omisión de detalles críticos. Además, la revisión manual de grandes volúmenes de radiografías puede retrasar el tratamiento oportuno para los pacientes.
+\subsection{Preguntas del problema}
+\begin{enumerate}
+    \item ¿Qué tecnología es más adecuada para implementar un sistema de clasificación de radiografías?
+    \item ¿Qué enfermedades pulmonares pueden ser detectadas de manera efectiva mediante un clasificador automatizado de radiografías de tórax?
+    \item ¿Cómo puede reducirse el tiempo de diagnóstico utilizando un clasificador automatizado?
+\end{enumerate}
+\subsection{Objetivos}
+\subsubsection{Objetivo general}
+Desarrollar un sistema automatizado para la clasificación de radiografías de tórax que permita la detección temprana y precisa de enfermedades pulmonares mejorando el diagnóstico médico y el tratamiento de los pacientes.
+\subsubsection{Objetivos especificos}
+\begin{itemize}
+    \item Implementar un modelo de clasificación de imágenes basado en técnicas de aprendizaje automático y procesamiento de imágenes.
+    \item Reducir el tiempo necesario para el diagnóstico médico mediante la automatización del proceso de clasificación.
+    \item Crear una interfaz de usuario que permita a las personas interactuar fácilmente con el sistema de clasificación y revisar los resultados
+\end{itemize}
+\subsection{Justificacion}
+La creciente necesidad de herramientas tecnológicas que apoyen al personal médico en la toma de decisiones clínicas. Un sistema de clasificación de radiografías de tórax automatizado puede reducir la carga de trabajo de los radiólogos, aumentar la precisión en el diagnóstico y permitir una detección más temprana de enfermedades críticas, lo que resulta en tratamientos más rápidos y efectivos. Además, el uso de tecnologías de inteligencia artificial en la medicina es un campo en rápida expansión, y este proyecto contribuiría a dicho avance.
+\section{Marco de referencia}
+\subsection{Marco contextual}
+\begin{itemize}
+    \item \textbf{Qure AI} Qure.ai es un innovador proveedor de soluciones de inteligencia artificial (IA) que está alterando el status quo de la radiología al mejorar la precisión de las imágenes y los resultados de salud con la ayuda de herramientas respaldadas por máquinas. Qure.ai aprovecha la tecnología de aprendizaje profundo para proporcionar una interpretación automatizada de exámenes de radiología como radiografías, tomografías computarizadas y ecografías para profesionales de imágenes médicas con poco tiempo y recursos, lo que permite un diagnóstico más rápido y una celeridad en el tratamiento. Qure.ai está ayudando a que la atención médica sea más accesible y asequible para los pacientes de todo el mundo.
+    \item \textbf{ChestLink} ChestLink es el primer producto de imágenes médicas con IA totalmente autónomo con marca CE. ChestLink identifica radiografías de tórax (CXR) sin anomalías y genera informes finales para los pacientes sin ninguna intervención del radiólogo, reduciendo la carga de trabajo de los radiólogos y permitiéndoles centrarse en los casos con patologías.
+\end{itemize}
+\subsection{Marco Teorico}
+El presente proyecto se fundamenta en los principios del aprendizaje automático, redes neuronales profundas y procesamiento de imágenes médicas. En particular, las redes neuronales convolucionales (CNN) han demostrado una eficacia notable en la clasificación de imágenes en diversas áreas, incluyendo el campo de la medicina. Estas redes son capaces de aprender y detectar características esenciales en radiografías de tórax, como patrones de opacidad o irregularidades en los pulmones, que pueden ser indicativos de diversas patologías. La implementación del modelo abarcará técnicas avanzadas como la sintonización de hiperparámetros, estrategias de optimización y el manejo eficiente de grandes volúmenes de datos de imágenes, garantizando así un sistema robusto y escalable para el diagnóstico automatizado.
+\subsection{Marco legal}
+El desarrollo de este sistema debe cumplir con regulaciones y normativas relacionadas con el manejo de datos médicos, la privacidad y la seguridad. En muchos países, la protección de datos de salud está regulada por leyes como la Ley de Protección de Datos Personales (GDPR en Europa) o la Ley HIPAA (en Estados Unidos), que establecen directrices estrictas sobre la recolección, almacenamiento y uso de información de pacientes. Además, cualquier herramienta médica que asista en el diagnóstico debe seguir las normativas de agencias reguladoras de salud, como la FDA (Administración de Alimentos y Medicamentos) en EE.UU., que aprueba el uso de dispositivos médicos basados en inteligencia artificial.
+\section{Metodologia}
+\end{document}
