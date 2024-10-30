@@ -10,7 +10,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{Sistema de Detección de Enfermedades Pulmonares mediante Inteligencia Artificial aplicada a Radiografías de Tórax}
+\title{Clasificador de Radiografías de Tórax mediante Técnicas de Minería de Datos e Inteligencia Artificial\\}
 
 \author{\IEEEauthorblockN{Juan David Mateus}
 \IEEEauthorblockA{\textit{Facultad de Ingenieria} \\
@@ -28,97 +28,138 @@ jhonnatan.mendez@campusucc.edu.co}
 \maketitle
 
 \begin{abstract}
-La detección temprana y precisa de enfermedades pulmonares representa un desafío significativo en la medicina moderna. Este proyecto presenta el desarrollo de un sistema basado en inteligencia artificial que automatiza la detección de patologías pulmonares a través del análisis de radiografías de tórax. El sistema integra tecnologías modernas como React con TypeScript y Tailwind para el frontend, y Django para el backend, creando una plataforma web robusta y accesible. La solución propuesta busca optimizar el proceso de diagnóstico médico, reduciendo el tiempo de análisis y mejorando la precisión en la detección de enfermedades pulmonares.
+La exploración y análisis de grandes volúmenes de datos médicos, específicamente radiografías de tórax, representa un desafío significativo en el campo de la minería de datos médicos. Este proyecto implementa técnicas avanzadas de minería de datos e inteligencia artificial para procesar y analizar radiografías de tórax, con el objetivo de detectar patrones y características asociadas a diversas enfermedades pulmonares. Utilizando técnicas de pre-procesamiento de imágenes, extracción de características y algoritmos de aprendizaje profundo, se desarrolla un sistema capaz de clasificar automáticamente diferentes patologías pulmonares, mejorando así la eficiencia y precisión del diagnóstico médico.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Inteligencia Artificial, Radiografías de Tórax, Diagnóstico Médico, React, Django, Aprendizaje Profundo
+Minería de datos médicos, Procesamiento de imágenes, Deep Learning, Radiografías de tórax, Clasificación automática
 \end{IEEEkeywords}
 
-\section{Introducción}
-En la actualidad, el diagnóstico médico asistido por computadora ha emergido como una herramienta fundamental en el campo de la medicina moderna. La integración de tecnologías de inteligencia artificial con sistemas de procesamiento de imágenes médicas representa un avance significativo en la detección temprana y precisa de enfermedades pulmonares.
+\section{Introduction}
+En la era actual del Big Data médico, la minería de datos se ha convertido en una herramienta fundamental para el análisis y procesamiento de información médica. Las radiografías de tórax, como fuente rica en datos visuales, presentan un campo ideal para la aplicación de técnicas de minería de datos e inteligencia artificial. El proceso de extracción de conocimiento a partir de estas imágenes médicas involucra múltiples etapas, desde la recopilación y preprocesamiento de datos hasta la aplicación de algoritmos de aprendizaje profundo para la identificación de patrones patológicos.\\
 
-Este proyecto se centra en el desarrollo de una aplicación web que implementa un sistema de detección automatizada de enfermedades pulmonares mediante el análisis de radiografías de tórax. La solución combina tecnologías modernas de desarrollo web como React con TypeScript y Tailwind para la interfaz de usuario, y Django para la gestión del backend, creando así una plataforma integral que facilita el proceso de diagnóstico médico.
+Este proyecto implementa una metodología integral de minería de datos (KDD - Knowledge Discovery in Databases) aplicada al análisis de radiografías torácicas, combinando técnicas de procesamiento de imágenes, extracción de características y algoritmos de clasificación avanzados para desarrollar un sistema robusto de detección de enfermedades pulmonares.
 
-La implementación de este sistema busca abordar las limitaciones actuales en el análisis manual de radiografías, ofreciendo una herramienta que no solo acelera el proceso de diagnóstico sino que también mejora la precisión en la detección de patologías pulmonares.
-
-\section{Planteamiento del Problema}
-\subsection{Descripción del Problema}
-El diagnóstico médico basado en radiografías de tórax enfrenta diversos desafíos en la actualidad:
+\section{Planteamiento del problema}
+\subsection{Descripcion del problema}
+El análisis de grandes volúmenes de radiografías de tórax presenta desafíos significativos en el contexto de la minería de datos médicos:
 
 \begin{itemize}
-    \item Alta demanda de análisis radiológicos que resulta en tiempos de espera prolongados
-    \item Variabilidad en la interpretación entre diferentes profesionales médicos
-    \item Necesidad de procesamiento eficiente de grandes volúmenes de imágenes médicas
-    \item Limitaciones en la disponibilidad de especialistas en áreas remotas
-    \item Riesgo de error humano debido a fatiga o sobrecarga laboral
+    \item Necesidad de procesar y analizar eficientemente grandes conjuntos de datos de imágenes médicas
+    \item Complejidad en la extracción de características relevantes para el diagnóstico
+    \item Variabilidad en la calidad y formato de las imágenes
+    \item Requerimiento de técnicas avanzadas de preprocesamiento y normalización de datos
+    \item Necesidad de algoritmos robustos para la clasificación automática de patologías
 \end{itemize}
 
-\subsection{Justificación}
-El desarrollo de este sistema se justifica por múltiples factores:
-
-\begin{itemize}
-    \item Necesidad de automatizar y agilizar el proceso de diagnóstico médico
-    \item Importancia de proporcionar herramientas de apoyo al personal médico
-    \item Potencial para mejorar la accesibilidad a diagnósticos especializados
-    \item Reducción de costos operativos en el sistema de salud
-    \item Contribución al avance tecnológico en el campo de la medicina
-\end{itemize}
-
-\section{Objetivos}
-\subsection{Objetivo General}
-Desarrollar un sistema web basado en inteligencia artificial para la detección automatizada de enfermedades pulmonares mediante el análisis de radiografías de tórax, utilizando tecnologías modernas de desarrollo web y técnicas avanzadas de aprendizaje profundo.
-
-\subsection{Objetivos Específicos}
-\begin{itemize}
-    \item Implementar una interfaz de usuario intuitiva utilizando React, TypeScript y Tailwind CSS que facilite la carga y visualización de radiografías
-    \item Desarrollar un backend robusto en Django que gestione el procesamiento de imágenes y la implementación del modelo de IA
-    \item Crear un modelo de aprendizaje profundo para la clasificación precisa de patologías pulmonares
-    \item Establecer un sistema de almacenamiento y gestión eficiente de imágenes médicas
-    \item Implementar medidas de seguridad y privacidad para la protección de datos médicos sensibles
-\end{itemize}
-
-\section{Marco Referencial}
-\subsection{Marco Teórico}
-El proyecto se fundamenta en diversos campos teóricos:
-
-\begin{itemize}
-    \item \textbf{Aprendizaje Profundo:} Utilización de redes neuronales convolucionales (CNN) para el análisis de imágenes médicas
-    \item \textbf{Desarrollo Web Moderno:} Implementación de arquitecturas frontend-backend utilizando React y Django
-    \item \textbf{Procesamiento de Imágenes Médicas:} Técnicas especializadas para el tratamiento de radiografías
-    \item \textbf{Seguridad Informática:} Protocolos y estándares para la protección de datos médicos
-\end{itemize}
-
-\subsection{Metodología}
-El desarrollo del proyecto sigue una metodología ágil adaptada:
-
+\subsection{Preguntas del problema}
 \begin{enumerate}
-    \item \textbf{Fase de Planificación}
+    \item ¿Qué técnicas de minería de datos son más efectivas para el procesamiento y análisis de radiografías de tórax?
+    \item ¿Cómo se puede optimizar el proceso de extracción de características relevantes en las imágenes médicas?
+    \item ¿Qué algoritmos de clasificación proporcionan mejores resultados en la detección de patologías pulmonares?
+    \item ¿Cómo se puede validar la efectividad del modelo de minería de datos en el contexto médico?
+\end{enumerate}
+
+\subsection{Objetivos}
+\subsubsection{Objetivo general}
+Desarrollar un sistema de clasificación automática de radiografías de tórax mediante técnicas de minería de datos y aprendizaje profundo, implementando una metodología KDD para la detección efectiva de enfermedades pulmonares.
+
+\subsubsection{Objetivos especificos}
+\begin{itemize}
+    \item Implementar técnicas de preprocesamiento y normalización de imágenes médicas para optimizar la calidad de los datos
+    \item Desarrollar algoritmos de extracción de características relevantes utilizando técnicas de minería de datos
+    \item Diseñar e implementar un modelo de clasificación basado en redes neuronales convolucionales
+    \item Evaluar y validar el rendimiento del sistema utilizando métricas estándar de minería de datos
+\end{itemize}
+
+\subsection{Justificacion}
+La implementación de técnicas de minería de datos en el análisis de radiografías de tórax representa una solución innovadora a los desafíos actuales en el diagnóstico médico. Este enfoque permite:
+\begin{itemize}
+    \item Procesamiento eficiente de grandes volúmenes de datos médicos
+    \item Extracción automática de características relevantes
+    \item Mejora en la precisión del diagnóstico mediante algoritmos avanzados
+    \item Reducción del tiempo de análisis y diagnóstico
+    \item Apoyo objetivo en la toma de decisiones médicas
+\end{itemize}
+
+\section{Marco de referencia}
+\subsection{Marco Teorico}
+El proyecto se fundamenta en los siguientes conceptos y técnicas de minería de datos:
+
+\begin{itemize}
+    \item \textbf{Proceso KDD (Knowledge Discovery in Databases)}
     \begin{itemize}
-        \item Análisis de requerimientos
-        \item Definición de arquitectura del sistema
-        \item Selección de tecnologías y herramientas
+        \item Selección y preprocesamiento de datos
+        \item Transformación de datos
+        \item Minería de datos
+        \item Evaluación e interpretación de patrones
     \end{itemize}
     
-    \item \textbf{Fase de Desarrollo}
+    \item \textbf{Técnicas de Preprocesamiento de Imágenes}
     \begin{itemize}
-        \item Implementación del frontend en React con TypeScript
-        \item Desarrollo del backend en Django
-        \item Entrenamiento del modelo de IA
+        \item Normalización y estandarización
+        \item Reducción de ruido
+        \item Mejora de contraste
+        \item Segmentación de regiones de interés
     \end{itemize}
     
-    \item \textbf{Fase de Pruebas}
+    \item \textbf{Algoritmos de Aprendizaje Profundo}
     \begin{itemize}
-        \item Validación del modelo de IA
-        \item Pruebas de integración
-        \item Evaluación de usabilidad
+        \item Redes neuronales convolucionales (CNN)
+        \item Técnicas de transferencia de aprendizaje
+        \item Optimización de hiperparámetros
+    \end{itemize}
+\end{itemize}
+
+\section{Metodologia}
+La metodología del proyecto se basa en el marco de trabajo Scrum, adaptado para proyectos de minería de datos:
+
+\subsection{Metodología Scrum}
+\begin{itemize}
+    \item \textbf{Roles}
+    \begin{itemize}
+        \item Product Owner: Responsable de definir los requisitos del sistema
+        \item Scrum Master: Facilitador del proceso
+        \item Equipo de desarrollo: Implementación técnica
+    \end{itemize}
+    
+    \item \textbf{Eventos}
+    \begin{itemize}
+        \item Sprint Planning: Planificación de tareas cada 2 semanas
+        \item Daily Scrum: Reuniones diarias de seguimiento
+        \item Sprint Review: Revisión de resultados
+        \item Sprint Retrospective: Mejora continua del proceso
+    \end{itemize}
+\end{itemize}
+
+\subsection{Fases del Proyecto}
+\begin{enumerate}
+    \item \textbf{Fase de Preparación de Datos}
+    \begin{itemize}
+        \item Recopilación de radiografías
+        \item Preprocesamiento y normalización
+        \item Etiquetado de datos
+    \end{itemize}
+    
+    \item \textbf{Fase de Desarrollo del Modelo}
+    \begin{itemize}
+        \item Implementación de algoritmos de extracción de características
+        \item Desarrollo del modelo de clasificación
+        \item Optimización y ajuste de parámetros
+    \end{itemize}
+    
+    \item \textbf{Fase de Evaluación}
+    \begin{itemize}
+        \item Validación del modelo
+        \item Análisis de métricas de rendimiento
+        \item Ajustes y mejoras iterativas
     \end{itemize}
     
     \item \textbf{Fase de Implementación}
     \begin{itemize}
-        \item Despliegue del sistema
-        \item Documentación
-        \item Capacitación de usuarios
+        \item Desarrollo de la interfaz web
+        \item Integración del modelo
+        \item Pruebas de usuario
     \end{itemize}
 \end{enumerate}
 
