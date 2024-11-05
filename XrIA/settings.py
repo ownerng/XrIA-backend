@@ -44,7 +44,9 @@ INSTALLED_APPS = [
 
     # Tu aplicación
     'api',
-    'users'
+    'users',
+    'docs',
+    'XrIAModel'
 ]
 
 MIDDLEWARE = [
